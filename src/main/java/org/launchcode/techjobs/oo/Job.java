@@ -85,14 +85,15 @@ public class Job {
 
     @Override
     public String toString() {
+
+
         return System.lineSeparator() +
-                "id=" + id +
-                ", name='" + name +
-                ", employer=" + employer +
-                ", location=" + location +
-                ", positionType=" + positionType +
-                ", coreCompetency=" + coreCompetency +
-                System.lineSeparator();
+                "ID: " + id + System.lineSeparator() +
+                "Name: " + name + System.lineSeparator() +
+                "Employer: " + employer + System.lineSeparator() +
+                "Location: " + location + System.lineSeparator() +
+                "Position Type: " + positionType + System.lineSeparator() +
+                "Core Competency: " + coreCompetency + System.lineSeparator();
     }
 
     @Override

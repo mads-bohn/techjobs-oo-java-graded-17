@@ -49,4 +49,23 @@ public class JobTest {
         assertEquals(firstChar, System.lineSeparator());
         assertEquals(lastChar, System.lineSeparator());
     }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String expectedString = System.lineSeparator() +
+                "ID: 1" + System.lineSeparator() +
+                "Name: Product tester" + System.lineSeparator() +
+                "Employer: ACME" + System.lineSeparator() +
+                "Location: Desert" + System.lineSeparator() +
+                "Position Type: Quality control" + System.lineSeparator() +
+                "Core Competency: Persistence" + System.lineSeparator();
+        String actualString = job.toString();
+        assertEquals(expectedString, actualString);
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+
+    }
 }
