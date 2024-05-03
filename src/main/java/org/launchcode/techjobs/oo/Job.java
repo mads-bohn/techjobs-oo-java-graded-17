@@ -84,6 +84,18 @@ public class Job {
     }
 
     @Override
+    public String toString() {
+        return System.lineSeparator() +
+                "id=" + id +
+                ", name='" + name +
+                ", employer=" + employer +
+                ", location=" + location +
+                ", positionType=" + positionType +
+                ", coreCompetency=" + coreCompetency +
+                System.lineSeparator();
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(id);
     }

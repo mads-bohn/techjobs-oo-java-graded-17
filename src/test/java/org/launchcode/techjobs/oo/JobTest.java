@@ -38,5 +38,15 @@ public class JobTest {
         Job firstJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job secondJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertNotEquals(firstJob, secondJob);
-    } 
+    }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String testString = job.toString();
+        String firstChar = Character.toString(job.toString().charAt(0));
+        String lastChar = Character.toString(testString.charAt(testString.length() - 1));
+        assertEquals(firstChar, System.lineSeparator());
+        assertEquals(lastChar, System.lineSeparator());
+    }
 }
