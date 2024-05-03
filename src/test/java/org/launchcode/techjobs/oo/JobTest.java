@@ -66,6 +66,15 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-
+        Job job = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String expectedString = System.lineSeparator() +
+                "ID: 1" + System.lineSeparator() +
+                "Name: Product tester" + System.lineSeparator() +
+                "Employer: ACME" + System.lineSeparator() +
+                "Location: Data not available" + System.lineSeparator() +
+                "Position Type: Quality control" + System.lineSeparator() +
+                "Core Competency: Persistence" + System.lineSeparator();
+        String actualString = job.toString();
+        assertEquals(expectedString, actualString);
     }
 }
